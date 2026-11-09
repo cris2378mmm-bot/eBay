@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>eBay México | Compra y vende artículos únicos, reacondicionados y de colección</title>
+<meta name="description" content="Relojes, sneakers, autopartes y tecnología reacondicionada con Authenticity Guarantee y eBay Money Back Guarantee.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext x='6' y='46' font-size='54' font-weight='700' fill='%23e53238' font-family='Arial'%3Ee%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:14px/1.4 "Market Sans","Helvetica Neue",Helvetica,Arial,sans-serif;color:#191919;background:#fff}
+a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+:focus-visible{outline:2px solid #3665f3;outline-offset:2px}
+.w{max-width:1280px;margin:0 auto;padding:0 16px}
+.top{font-size:12px;border-bottom:1px solid #e5e5e5}.top .w{display:flex;justify-content:space-between;align-items:center;min-height:36px;gap:16px;flex-wrap:wrap}
+.top nav{display:flex;gap:16px;align-items:center}.top a:hover,.top button:hover{text-decoration:underline}.bl{color:#3665f3}
+header{position:sticky;top:0;z-index:50;background:#fff}.hd .w{display:flex;align-items:center;gap:16px;height:72px}
+.logo{width:100px;height:48px;flex:none}.cat{font-size:12px;color:#707070;white-space:nowrap}
+.sb{flex:1;display:flex;align-items:center;border:1px solid #191919;border-radius:24px;height:46px;padding:2px;gap:8px;padding-left:14px}
+.sb:focus-within{box-shadow:0 0 0 2px #c7d3fb}.sb input{flex:1;border:0;outline:0;font:inherit;font-size:15px;min-width:0}
+.sb select{border:0;border-left:1px solid #ccc;font:inherit;font-size:13px;padding:0 8px;height:30px;background:#fff;max-width:180px}
+.sb button{background:#3665f3;color:#fff;font-weight:700;border-radius:22px;height:100%;padding:0 32px}.sb button:hover{background:#2f55cc}
+.ic{width:22px;height:22px;fill:currentColor}.cb{position:relative;padding:8px}.cb:hover{color:#3665f3}
+.cnt{position:absolute;top:-2px;right:-4px;background:#e0103a;color:#fff;border-radius:10px;font-size:11px;min-width:18px;text-align:center;padding:0 4px;font-weight:700}
+.nav{border-bottom:1px solid #e5e5e5}.nav .w{display:flex;gap:22px;overflow-x:auto;height:40px;align-items:center;white-space:nowrap;font-size:13px}
+.nav a:hover,.nav a.on{color:#3665f3;text-decoration:underline}
+.hero{position:relative;margin:16px 0;border-radius:16px;overflow:hidden;height:340px}
+.sl{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 6%;opacity:0;transition:opacity .5s;pointer-events:none}.sl.on{opacity:1;pointer-events:auto}
+.sl h2{font-size:40px;line-height:1.1;margin-bottom:12px;max-width:440px}.sl p{font-size:16px;margin-bottom:20px;max-width:420px}
+.btn{display:inline-block;background:#191919;color:#fff;border-radius:24px;padding:12px 28px;font-weight:700}.btn:hover{background:#3665f3}
+.sl img{height:84%;width:42%;object-fit:cover;border-radius:16px}
+.dots{position:absolute;bottom:12px;left:50%;transform:translateX(-50%);display:flex;gap:8px}.dots button{width:8px;height:8px;border-radius:50%;background:#191919;opacity:.3}.dots .on{opacity:1}
+.ar{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:0 1px 5px rgba(0,0,0,.3);font-size:20px}
+.st{font-size:24px;font-weight:700;margin:32px 0 16px;display:flex;justify-content:space-between;align-items:baseline}.st a{font-size:14px;font-weight:400;color:#3665f3;text-decoration:underline}
+.circ{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;text-align:center}.circ button{display:block}
+.circ img{width:100%;aspect-ratio:1;border-radius:50%;object-fit:cover;background:#f1f1f1;transition:transform .2s}.circ button:hover img{transform:scale(1.04)}.circ span{display:block;margin-top:8px;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:24px 20px}
+.im{position:relative;aspect-ratio:1;border-radius:16px;overflow:hidden;background:#f1f1f1;cursor:pointer}.im img{width:100%;height:100%;object-fit:cover}
+.heart{position:absolute;top:8px;right:8px;width:34px;height:34px;border-radius:50%;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,.3);color:#707070;font-size:17px}.heart.on{color:#e0103a}
+.card h3{font-size:14px;font-weight:400;margin:10px 0 4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;cursor:pointer;min-height:39px}.card h3:hover{text-decoration:underline}
+.k{font-size:12px;color:#707070}.pr{font-size:18px;font-weight:700}.was{color:#707070;text-decoration:line-through;font-size:13px;margin-left:6px}.off{color:#c82009;font-size:13px;margin-left:6px}
+.sh{font-size:12px;color:#707070;margin-bottom:8px}.tm{color:#c82009;font-weight:700}
+.add{width:100%;border:1px solid #3665f3;color:#3665f3;border-radius:24px;padding:8px;font-weight:700}.add:hover{background:#eef2ff}
+.trust{background:#f7f7f7;border-radius:16px;padding:24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;margin:40px 0}
+.trust button{display:flex;gap:12px;text-align:left;align-items:flex-start}.trust svg{width:32px;height:32px;flex:none;fill:#3665f3}.trust b{display:block}.trust span{font-size:12px;color:#707070}
+footer{border-top:1px solid #e5e5e5;font-size:12px;color:#707070;padding:32px 0}.fg{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:24px;margin-bottom:24px}
+footer h4{color:#191919;font-size:14px;margin-bottom:10px}footer li{list-style:none;margin-bottom:6px}footer a:hover,footer button:hover{text-decoration:underline}footer .lg{border-top:1px solid #e5e5e5;padding-top:16px}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:100;opacity:0;visibility:hidden;transition:.25s}.ov.on{opacity:1;visibility:visible}
+.dr{position:fixed;top:0;right:-440px;width:440px;max-width:94vw;height:100%;background:#fff;z-index:101;display:flex;flex-direction:column;transition:right .3s}.dr.on{right:0}
+.dh{display:flex;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e5e5;font-size:20px;font-weight:700}
+#cl{flex:1;overflow:auto;padding:16px 20px}.cr{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid #eee}.cr img{width:80px;height:80px;border-radius:8px;object-fit:cover;flex:none}.cr b{font-weight:400;font-size:13px}.cr .pr{font-size:15px}
+.qt{display:flex;gap:10px;align-items:center;margin-top:4px}.qt button{width:26px;height:26px;border:1px solid #ccc;border-radius:50%}.qt .rm{width:auto;border:0;color:#3665f3;text-decoration:underline;margin-left:8px}.em{text-align:center;color:#707070;padding:60px 0}
+.df{padding:16px 20px;border-top:1px solid #e5e5e5}.df div{display:flex;justify-content:space-between;margin-bottom:6px}.df .tt{font-size:18px;font-weight:700}.df .btn{width:100%;text-align:center;background:#3665f3;margin-top:8px}
+.md{position:fixed;left:50%;top:50%;transform:translate(-50%,-50%);z-index:102;background:#fff;border-radius:16px;width:760px;max-width:94vw;max-height:90vh;overflow:auto;padding:28px;display:none}.md.on{display:block}
+.md .x{position:absolute;top:10px;right:14px;font-size:28px}.md h3{font-size:22px;margin-bottom:10px}.md p{margin-bottom:10px;line-height:1.55}
+.qv{display:grid;grid-template-columns:1fr 1fr;gap:24px}.qv img{width:100%;border-radius:12px;aspect-ratio:1;object-fit:cover}.qv .btn{display:block;text-align:center;margin-top:8px;width:100%}.qv .o{background:#fff;color:#3665f3;border:1px solid #3665f3}
+.ts{position:fixed;bottom:24px;left:50%;transform:translate(-50%,100px);background:#191919;color:#fff;padding:12px 22px;border-radius:8px;z-index:200;opacity:0;transition:.3s}.ts.on{transform:translate(-50%,0);opacity:1}
+@media(max-width:800px){.cat,.top .l{display:none}.hero{height:400px}.sl{flex-direction:column-reverse;justify-content:center;text-align:center;padding:16px}.sl img{width:100%;height:150px}.sl h2{font-size:26px}.circ{grid-template-columns:repeat(3,1fr)}.fg{grid-template-columns:1fr 1fr}.qv{grid-template-columns:1fr}.hd .w{height:auto;padding:10px 16px;flex-wrap:wrap}.sb{order:3;flex-basis:100%}.sb select{display:none}.logo{width:80px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="lg" viewBox="0 0 108 52"><text y="37" font-family="Poppins,Arial,sans-serif" font-weight="600" font-size="50" letter-spacing="-3.5"><tspan fill="#e53238">e</tspan><tspan fill="#0064d2">b</tspan><tspan fill="#f5af02">a</tspan><tspan fill="#86b817">y</tspan></text></symbol>
+<symbol id="sh" viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.4 9.4 8 11 4.6-1.6 8-6 8-11V5l-8-3zm-1.2 14-3.6-3.6 1.4-1.4 2.2 2.2 4.6-4.6 1.4 1.4-6 6z"/></symbol>
+<symbol id="bx" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5V8zm-9 2.5L6.5 7.7 12 5l5.5 2.7L12 10.5zM5 9.4l6 3.3v6.6l-6-3.3V9.4zm8 9.9v-6.6l6-3.3v6.6l-6 3.3z"/></symbol>
+<symbol id="lf" viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.2 3.8 19.8L5.7 21c1-1.8 1.9-3.4 3.7-4.5 3 1.4 6.6.3 8.6-2.5 1.2-1.7 1.7-4 1.5-6.2L19 7.5 17 8z"/></symbol>
+<symbol id="ct" viewBox="0 0 24 24"><path d="M7 18a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm10 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zM1 2v2h2l3.6 7.6-1.4 2.4A2 2 0 0 0 7 17h12v-2H7.4l1.1-2h7.5a2 2 0 0 0 1.7-1l3.6-6.5A1 1 0 0 0 20.4 4H5.2l-.9-2H1z"/></symbol>
+</svg>
+
+<div class="top"><div class="w">
+ <nav><span>¡Hola! <a class="bl" href="#">Inicia sesión</a> o <a class="bl" href="#">regístrate</a></span><a class="l" href="#">Ofertas del día</a><button class="l" onclick="info('brand')">Brand Book</button><button class="l" onclick="info('act')">Modelo TSDCP</button></nav>
+ <nav><a class="l" href="#">Enviar a: 🇲🇽 MX</a><a href="#">Vender</a><a href="#">Mi eBay ▾</a></nav>
+</div></div>
+
+<header class="hd"><div class="w">
+ <a href="#" aria-label="eBay"><svg class="logo"><use href="#lg"/></svg></a>
+ <button class="cat" onclick="setCat('all')">Comprar por<br>categoría ▾</button>
+ <form class="sb" onsubmit="go();return false"><svg class="ic" viewBox="0 0 24 24" style="color:#707070"><path d="M15.5 14h-.8l-.3-.3A6.5 6.5 0 1 0 14 15.5l.3.3v.8l5 5 1.5-1.5-5-5zm-6 0a4.5 4.5 0 1 1 0-9 4.5 4.5 0 0 1 0 9z"/></svg><input id="q" placeholder="Buscar cualquier artículo" aria-label="Buscar"><select id="qc" aria-label="Categoría"></select><button>Buscar</button></form>
+ <button class="cb" onclick="drawer()" aria-label="Carrito"><svg class="ic"><use href="#ct"/></svg><span class="cnt" id="cn">0</span></button>
+</div></header>
+<nav class="nav"><div class="w" id="nv"></div></nav>
+
+<main class="w">
+ <section class="hero" id="hero" aria-label="Promociones"></section>
+ <h2 class="st">Explora las categorías populares</h2><div class="circ" id="circ"></div>
+ <h2 class="st" id="items"><span id="ttl">Artículos que podrían gustarte</span><a href="#" onclick="setCat('all');return false">Ver todo</a></h2>
+ <div class="grid" id="grid"></div>
+ <section class="trust">
+  <button onclick="info('aut')"><svg><use href="#sh"/></svg><div><b>Authenticity Guarantee</b><span>Peritos independientes inspeccionan relojes, sneakers y tarjetas.</span></div></button>
+  <button onclick="info('mbg')"><svg><use href="#sh"/></svg><div><b>Money Back Guarantee</b><span>Si no llega o no es como se describe, te devolvemos tu dinero.</span></div></button>
+  <button onclick="info('rec')"><svg><use href="#lf"/></svg><div><b>eBay Refurbished</b><span>Tecnología reacondicionada con garantía y menor huella de carbono.</span></div></button>
+  <button onclick="info('per')"><svg><use href="#bx"/></svg><div><b>Envío con seguimiento</b><span>Logística verificada sin almacenamiento forzoso.</span></div></button>
+ </section>
+</main>
+
+<footer><div class="w">
+ <div class="fg"><div><svg class="logo"><use href="#lg"/></svg></div><div id="ft" style="display:contents"></div></div>
+ <div class="lg">© 1995-2026 eBay Inc. Proyecto académico: Práctica 7, Análisis de Branding (Actuaría, Universidad La Salle Bajío) — Cristian Alejandro Balderas Durán (85120). No afiliado a eBay Inc.; las marcas pertenecen a sus dueños.</div>
+</div></footer>
+
+<div class="ov" id="ov" onclick="closeAll()"></div>
+<aside class="dr" id="dr" aria-label="Carrito de compras"><div class="dh"><span>Carrito (<span id="cn2">0</span>)</span><button onclick="closeAll()" aria-label="Cerrar">×</button></div><div id="cl"></div>
+ <div class="df"><div><span>Subtotal</span><span id="cs"></span></div><div><span>Envío</span><span style="color:#2e7d32">Gratis</span></div><div class="tt"><span>Total</span><span id="ct2"></span></div><button class="btn" onclick="checkout()">Ir a pagar</button></div></aside>
+<div class="md" id="md" role="dialog" aria-modal="true"><button class="x" onclick="closeAll()" aria-label="Cerrar">×</button><div id="mc"></div></div>
+<div class="ts" id="ts" role="status"></div>
+
+<script>
+const $=id=>document.getElementById(id);
+const U=(i,w=600)=>`https://images.unsplash.com/photo-${i}?auto=format&fit=crop&w=${w}&q=75`;
+const FB="data:image/svg+xml,"+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#f1f1f1"/><path d="M28 66l15-20 11 13 8-9 12 16z" fill="#c9c9c9"/><circle cx="64" cy="36" r="6" fill="#c9c9c9"/></svg>');
+const fb=e=>{e.onerror=null;e.src=FB};
+const fmt=n=>'MXN $'+n.toLocaleString('es-MX',{minimumFractionDigits:2});
+const CATS={all:'Todas las categorías',relojes:'Relojes',sneakers:'Sneakers',motors:'eBay Motors',recommerce:'Reacondicionados',coleccionables:'Coleccionables y arte',moda:'Moda'};
+const D={relojes:'Pieza inspeccionada por un perito independiente antes del envío.',sneakers:'Par verificado con número de serie, costuras y materiales originales.',motors:'Refacción original descatalogada. Verifica la compatibilidad con tu vehículo.',recommerce:'Equipo reacondicionado, probado y con garantía incluida.',coleccionables:'Artículo de colección en excelente estado, con certificado cuando aplica.',moda:'Prenda auténtica, revisada por el equipo de eBay.'};
+const P=[
+{id:1,t:'Reloj Omega Speedmaster Professional Moonwatch Vintage 1969',c:'relojes',p:98500,k:'Usado · Authenticity Guarantee',i:'1522335789203-aabd1fc54bc9',a:15502,b:19},
+{id:2,t:'Nike Air Jordan 1 Retro High OG Chicago 1985 Original',c:'sneakers',p:32000,w:36500,k:'Nuevo · Authenticity Guarantee',i:'1552346154-21d32810aba3'},
+{id:3,t:'Carburador Holley 4 barras 650 CFM original Ford Mustang 1967',c:'motors',p:9400,k:'Usado · Pieza descatalogada',i:'1486006920555-c77dce18193b'},
+{id:4,t:'Apple MacBook Pro 14" M2 Pro reacondicionada Grado A',c:'recommerce',p:25900,w:41999,k:'Reacondicionado certificado · 2 años de garantía',i:'1517336714731-489689fd1ca8'},
+{id:5,t:'Carta Pokémon Charizard 1st Edition Shadowless Base Set PSA 9',c:'coleccionables',p:74500,k:'Calificada PSA 9 · Authenticity Guarantee',i:'1613771404784-3a5686aa2be3',a:42300,b:42},
+{id:6,t:'Volante clásico Momo de cuero genuino 350 mm',c:'motors',p:5800,k:'Usado · Listo para restauración',i:'1584345604476-8ec5e12e42dd'},
+{id:7,t:'Cámara réflex Canon AE-1 con lente 50 mm f/1.4',c:'coleccionables',p:5200,k:'Usado · Obturador calibrado',i:'1526170375885-4d8ecf77b99f',a:9800,b:11},
+{id:8,t:'Sony PlayStation 5 Slim Digital reacondicionada',c:'recommerce',p:7990,w:9499,k:'Reacondicionado · Accesorios originales',i:'1606813907291-d86efa9b94db'},
+{id:9,t:'Audífonos Sony WH-1000XM5 con cancelación de ruido',c:'recommerce',p:4600,w:7999,k:'Reacondicionado · Almohadillas nuevas',i:'1505740420928-5e560c06d30e'},
+{id:10,t:'Chamarra de motociclista de cuero vintage Schott NYC 1978',c:'moda',p:8900,k:'Usado · Pátina auténtica',i:'1551028719-00167b16eac5'},
+{id:11,t:'Faro original Bosch para Porsche 911 Carrera 1974-1989',c:'motors',p:11200,k:'Usado · Vidrio sin fracturas',i:'1503376780353-7e6692767b70'},
+{id:12,t:'Reloj Rolex Datejust 36 mm esfera plata 1994',c:'relojes',p:135000,k:'Usado · Movimiento probado',i:'1524805444758-089113d48a6d',a:27500,b:27},
+{id:13,t:'Apple iPhone 14 Pro 256 GB reacondicionado Grado A',c:'recommerce',p:14900,w:24999,k:'Reacondicionado certificado · Batería 95%',i:'1511707171634-5f897ff02aa9'},
+{id:14,t:'Tenis Nike Air Max rojos edición clásica',c:'sneakers',p:2450,w:3299,k:'Nuevo con caja',i:'1542291026-7eec264c27ff'},
+{id:15,t:'Teclado mecánico retroiluminado switches rojos',c:'recommerce',p:1850,w:2600,k:'Reacondicionado · Probado',i:'1587829741301-dc798b83add3'},
+{id:16,t:'Bolso de piel genuina estilo mensajero',c:'moda',p:3200,w:4800,k:'Nuevo sin etiquetas',i:'1548036328-c9fa89d128fa'}];
+P.forEach(p=>p.e=Date.now()+(p.a||0)*1000);
+const I={aut:'<h3>Authenticity Guarantee</h3><p>En relojes de lujo, sneakers y tarjetas, el artículo pasa primero por una inspección física independiente.</p><p><b>1.</b> Verificación de costuras, números de serie y materiales. <b>2.</b> Cotejo con la descripción del vendedor. <b>3.</b> Sello físico con QR/NFC. <b>4.</b> Envío asegurado con firma.</p>',mbg:'<h3>eBay Money Back Guarantee</h3><p>Si el artículo no llega, llega dañado o no coincide con la descripción, recibes tu dinero de vuelta.</p>',rec:'<h3>eBay Refurbished</h3><p>Re-commerce certificado: alargamos la vida útil de la tecnología y reducimos residuos electrónicos.</p>',per:'<h3>Envío con seguimiento</h3><p>Sub-sello propuesto en la Práctica 7: eBay Verified Dispatch, con plazos de entrega garantizados.</p>',act:'<h3>Análisis de riesgo actuarial — TSDCP</h3><p style="background:#191919;color:#fff;padding:14px;border-radius:8px;font-family:monospace">TSDCP = (Reclamaciones formales resueltas / Transacciones brutas) × 1,000</p><p>Mide la siniestralidad de la garantía y alimenta la reserva técnica con modelos Poisson (frecuencia) y Lognormal (severidad). Valor del caso: 0.04‰.</p>',brand:'<h3>Guía de identidad de marca — eBay Inc.</h3><p><b>Propósito:</b> conectar comunidades y crear oportunidades económicas mediante comercio inclusivo y circular.</p><p><b>Colores:</b> rojo #E53238, azul #0064D2, amarillo #F5AF02, verde #86B817.</p><p><b>Tipografía:</b> Univers Extended (logotipo) y Market Sans (interfaz).</p><p><b>Arquetipo:</b> El Explorador, asistido por El Cuidador.</p>',pers:'<h3>Buyer personas</h3><p><b>Carlos, 34:</b> restaurador y coleccionista; prioriza autenticidad y exactitud técnica.</p><p><b>Laura, 29:</b> emprendedora de re-commerce; prioriza autonomía y economía circular.</p>'};
+let f='all',q='',cart={},W=new Set(),hi=0,hov=false;
+try{cart=JSON.parse(localStorage.getItem('ebay_cart'))||{}}catch(e){}
+const save=()=>{try{localStorage.setItem('ebay_cart',JSON.stringify(cart))}catch(e){}};
+function toast(m){const t=$('ts');t.textContent=m;t.classList.add('on');clearTimeout(toast.h);toast.h=setTimeout(()=>t.classList.remove('on'),2800)}
+function render(){const l=P.filter(p=>(f=='all'||p.c==f)&&(!q||(p.t+CATS[p.c]).toLowerCase().includes(q)));
+ $('ttl').textContent=q?`Resultados para "${q}"`:f=='all'?'Artículos que podrían gustarte':CATS[f];
+ $('grid').innerHTML=l.length?l.map(p=>`<article class="card"><div class="im" onclick="qv(${p.id})"><img src="${U(p.i)}" alt="${p.t}" loading="lazy" onerror="fb(this)"><button class="heart ${W.has(p.id)?'on':''}" onclick="event.stopPropagation();wish(${p.id})" aria-label="Favorito">♥</button></div><h3 onclick="qv(${p.id})">${p.t}</h3><div class="k">${p.k}</div><div><span class="pr">${fmt(p.p)}</span>${p.w?`<span class="was">${fmt(p.w)}</span><span class="off">${Math.round(100-p.p/p.w*100)}% de descuento</span>`:''}</div><div class="sh">${p.a?`${p.b} pujas · <span class="tm" data-e="${p.id}"></span>`:'Envío gratis'}</div><button class="add" onclick="${p.a?'bid':'add'}(${p.id})">${p.a?'Pujar +$500':'Agregar al carrito'}</button></article>`).join(''):'<p class="em" style="grid-column:1/-1">No encontramos resultados. Prueba con "Jordan", "Mustang" o "reacondicionado".</p>';
+ document.querySelectorAll('#nv a').forEach(a=>a.classList.toggle('on',a.dataset.c==f&&!q));tick()}
+function setCat(c){f=c;q='';$('q').value='';render();$('items').scrollIntoView({behavior:'smooth'})}
+function go(){q=$('q').value.toLowerCase().trim();f=$('qc').value;render();$('items').scrollIntoView({behavior:'smooth'})}
+function wish(id){W.has(id)?W.delete(id):(W.add(id),toast('Agregado a tus favoritos'));render()}
+function bid(id){const p=P.find(x=>x.id==id);p.p+=500;p.b++;toast('¡Puja registrada! Eres el mejor postor.');render();if($('md').classList.contains('on'))qv(id)}
+function add(id){cart[id]=(cart[id]||0)+1;save();rc();toast('Agregado al carrito');drawer(true)}
+function qty(id,d){cart[id]=(cart[id]||0)+d;if(cart[id]<=0)delete cart[id];save();rc()}
+function rc(){let n=0,t=0;const ids=Object.keys(cart);
+ $('cl').innerHTML=ids.length?ids.map(id=>{const p=P.find(x=>x.id==id),q=cart[id];n+=q;t+=q*p.p;return `<div class="cr"><img src="${U(p.i,200)}" alt="" onerror="fb(this)"><div><b>${p.t}</b><div class="k">${p.k}</div><div class="pr">${fmt(p.p)}</div><div class="qt"><button onclick="qty(${id},-1)" aria-label="Menos">−</button><span>${q}</span><button onclick="qty(${id},1)" aria-label="Más">+</button><button class="rm" onclick="qty(${id},-99)">Quitar</button></div></div></div>`}).join(''):'<p class="em">Tu carrito está vacío.<br>Explora artículos únicos y reacondicionados.</p>';
+ $('cn').textContent=$('cn2').textContent=n;$('cs').textContent=$('ct2').textContent=fmt(t)}
+function drawer(on){$('ov').classList.add('on');$('dr').classList.add('on')}
+function closeAll(){['ov','dr','md'].forEach(i=>$(i).classList.remove('on'))}
+function mod(h){$('mc').innerHTML=h;$('md').classList.add('on');$('ov').classList.add('on')}
+function info(k){mod(I[k]+'<a class="btn" href="#" onclick="closeAll();return false">Entendido</a>')}
+function qv(id){const p=P.find(x=>x.id==id);mod(`<div class="qv"><img src="${U(p.i,800)}" alt="${p.t}" onerror="fb(this)"><div><h3>${p.t}</h3><div class="k">${p.k}</div><div class="pr" style="font-size:26px;margin:10px 0">${fmt(p.p)}</div><p>${D[p.c]}</p><p class="k">Vendedor: coleccion_mx (99.8% de opiniones positivas)<br>${p.a?`${p.b} pujas · termina en <span class="tm" data-e="${p.id}"></span>`:'Envío gratis · Money Back Guarantee'}</p>${p.a?`<a class="btn" href="#" onclick="bid(${p.id});return false">Pujar ${fmt(p.p+500)}</a>`:`<a class="btn" href="#" onclick="closeAll();add(${p.id});return false">Agregar al carrito</a>`}<a class="btn o" href="#" onclick="wish(${p.id});return false">Agregar a favoritos</a></div></div>`);tick()}
+function checkout(){if(!Object.keys(cart).length)return toast('Tu carrito está vacío');cart={};save();rc();mod('<h3>¡Gracias por tu compra!</h3><p>Tu pedido quedó registrado bajo eBay Money Back Guarantee. Si incluye Authenticity Guarantee, pasará por inspección física antes de llegar a tu domicilio.</p><a class="btn" href="#" onclick="closeAll();return false">Seguir comprando</a>')}
+function tick(){document.querySelectorAll('[data-e]').forEach(el=>{const s=Math.max(0,Math.floor((P.find(x=>x.id==el.dataset.e).e-Date.now())/1e3));el.textContent=s?`${Math.floor(s/3600)}h ${String(Math.floor(s%3600/60)).padStart(2,'0')}m ${String(s%60).padStart(2,'0')}s`:'Finalizada'})}
+setInterval(tick,1000);
+// Hero
+const S=[['#dbe7ff','Relojes con peritaje físico','Cada pieza se verifica con Authenticity Guarantee antes de llegar a ti.','relojes','Ver relojes',1],['#ffe6d1','Sneakers que sí son originales','Ediciones icónicas, inspeccionadas una por una.','sneakers','Comprar sneakers',2],['#e4f3cf','Tecnología reacondicionada','Ahorra hasta 40% con garantía y envío gratis.','recommerce','Ver ofertas',4]];
+$('hero').innerHTML=S.map((s,n)=>`<div class="sl ${n?'':'on'}" style="background:${s[0]}"><div><h2>${s[1]}</h2><p>${s[2]}</p><a class="btn" href="#" onclick="setCat('${s[3]}');return false">${s[4]}</a></div><img src="${U(P[s[5]-1].i,900)}" alt="" onerror="this.remove()"></div>`).join('')+'<button class="ar" style="left:12px" onclick="show(hi-1)" aria-label="Anterior">‹</button><button class="ar" style="right:12px" onclick="show(hi+1)" aria-label="Siguiente">›</button><div class="dots">'+S.map((_,n)=>`<button onclick="show(${n})" aria-label="Slide ${n+1}"></button>`).join('')+'</div>';
+function show(n){hi=(n+S.length)%S.length;document.querySelectorAll('.sl').forEach((e,i)=>e.classList.toggle('on',i==hi));document.querySelectorAll('.dots button').forEach((e,i)=>e.classList.toggle('on',i==hi))}
+$('hero').onmouseenter=()=>hov=true;$('hero').onmouseleave=()=>hov=false;show(0);
+if(!matchMedia('(prefers-reduced-motion:reduce)').matches)setInterval(()=>!hov&&show(hi+1),6000);
+// Nav, categorías, footer
+$('nv').innerHTML=[['Inicio','all'],['Electrónica','recommerce'],['eBay Motors','motors'],['Moda','moda'],['Coleccionables y arte','coleccionables'],['Relojes','relojes'],['Sneakers','sneakers']].map(a=>`<a href="#" data-c="${a[1]}" onclick="setCat('${a[1]}');return false">${a[0]}</a>`).join('')+'<a href="#">Vender</a>';
+$('qc').innerHTML=Object.entries(CATS).map(a=>`<option value="${a[0]}">${a[1]}</option>`).join('');
+$('circ').innerHTML=Object.keys(CATS).slice(1).map(k=>`<button onclick="setCat('${k}')"><img src="${U(P.find(p=>p.c==k).i,300)}" alt="" loading="lazy" onerror="fb(this)"><span>${CATS[k]}</span></button>`).join('');
+$('ft').innerHTML=[['Comprar',['Registrarse','Money Back Guarantee','Authenticity Guarantee','Ofertas del día']],['Vender',['Empezar a vender','Comisiones','Centro para PyMEs','Empaque ecológico']],['Acerca de eBay',['Economía circular','Relaciones con inversionistas','Alianza de sustentabilidad']],['Identidad',[['Brand Book v1.0','brand'],['Indicador TSDCP','act'],['Buyer personas','pers']]]].map(c=>`<div><h4>${c[0]}</h4><ul>${c[1].map(l=>Array.isArray(l)?`<li><button onclick="info('${l[1]}')">${l[0]}</button></li>`:`<li><a href="#">${l}</a></li>`).join('')}</ul></div>`).join('');
+document.addEventListener('keydown',e=>e.key=='Escape'&&closeAll());
+render();rc();
+</script>
+</body>
+</html>
