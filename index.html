@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eBay Inc. | Marketplace Global & Re-commerce</title>
+  <meta name="description" content="Descubre artículos únicos, coleccionables, refacciones automotrices y productos reacondicionados con verificación de autenticidad y garantía de reembolso.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ebay-red: #E53238;
+      --ebay-blue: #0064D2;
+      --ebay-yellow: #F5AF02;
+      --ebay-green: #86B817;
+      --dark-text: #191919;
+      --muted-text: #707070;
+      --light-bg: #F7F7F7;
+      --border-color: #E5E5E5;
+      --card-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--dark-text);
+      background-color: #FFFFFF;
+      line-height: 1.5;
+    }
+
+    /* Top Utility Bar */
+    .top-bar {
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.82rem;
+      color: var(--muted-text);
+      background: #FAFAFA;
+      padding: 6px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .top-bar a {
+      color: var(--ebay-blue);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .top-bar-links span {
+      margin-left: 14px;
+    }
+
+    /* Main Navigation */
+    header {
+      padding: 16px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    /* SVG eBay Logo */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .logo-svg {
+      height: 38px;
+      width: auto;
+    }
+
+    /* Search Bar */
+    .search-wrapper {
+      flex: 1;
+      max-width: 680px;
+      display: flex;
+      align-items: center;
+      border: 2px solid var(--dark-text);
+      border-radius: 28px;
+      overflow: hidden;
+      background: #FFFFFF;
+      transition: border-color 0.2s;
+    }
+    .search-wrapper:focus-within {
+      border-color: var(--ebay-blue);
+    }
+    .search-wrapper input {
+      flex: 1;
+      padding: 11px 18px;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+    }
+    .search-wrapper select {
+      border: none;
+      border-left: 1px solid var(--border-color);
+      padding: 11px 12px;
+      background: #FAFAFA;
+      color: var(--dark-text);
+      outline: none;
+      font-size: 0.85rem;
+      cursor: pointer;
+    }
+    .search-wrapper button {
+      background: var(--ebay-blue);
+      color: white;
+      border: none;
+      padding: 11px 24px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .search-wrapper button:hover {
+      background: #004fb0;
+    }
+
+    /* Header Actions */
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .cart-btn-nav {
+      position: relative;
+      background: none;
+      border: 1px solid var(--border-color);
+      border-radius: 20px;
+      padding: 8px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .cart-btn-nav:hover {
+      border-color: var(--ebay-blue);
+      color: var(--ebay-blue);
+    }
+    .cart-badge {
+      background: var(--ebay-red);
+      color: #fff;
+      font-size: 0.75rem;
+      padding: 2px 7px;
+      border-radius: 12px;
+      font-weight: 700;
+    }
+
+    /* Sub Navigation Categories */
+    .sub-nav {
+      display: flex;
+      gap: 24px;
+      padding: 10px 5%;
+      border-bottom: 1px solid var(--border-color);
+      overflow-x: auto;
+      white-space: nowrap;
+      font-size: 0.88rem;
+    }
+    .sub-nav a {
+      color: var(--dark-text);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .sub-nav a:hover, .sub-nav a.active {
+      color: var(--ebay-blue);
+      font-weight: 700;
+    }
+
+    /* Hero Banner */
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      color: white;
+      padding: 50px 5%;
+      border-radius: 0 0 24px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(0, 100, 210, 0.35) 0%, transparent 70%);
+      top: -50px;
+      right: 15%;
+      pointer-events: none;
+    }
+    .hero-content {
+      max-width: 620px;
+      z-index: 2;
+    }
+    .hero-tagline {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(6px);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #E2E8F0;
+      margin-bottom: 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero h1 {
+      font-size: 2.6rem;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 16px;
+    }
+    .hero h1 span.brand-e { color: var(--ebay-red); }
+    .hero h1 span.brand-b { color: var(--ebay-blue); }
+    .hero h1 span.brand-a { color: var(--ebay-yellow); }
+    .hero h1 span.brand-y { color: var(--ebay-green); }
+
+    .hero p {
+      font-size: 1.05rem;
+      color: #CBD5E1;
+      margin-bottom: 24px;
+    }
+    .hero-buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--ebay-blue);
+      color: white;
+      padding: 12px 28px;
+      border-radius: 26px;
+      text-decoration: none;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-primary:hover {
+      background: #004fa8;
+      transform: translateY(-2px);
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,0.1);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.3);
+      padding: 12px 24px;
+      border-radius: 26px;
+      text-decoration: none;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .btn-secondary:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Trust Pillars Strip */
+    .trust-strip {
+      padding: 24px 5%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      background: #FAFAFA;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .trust-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: white;
+      padding: 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+    }
+    .trust-icon {
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+    .trust-text h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .trust-text p {
+      font-size: 0.8rem;
+      color: var(--muted-text);
+    }
+
+    /* Catalog Section */
+    .catalog-section {
+      padding: 40px 5%;
+    }
+    .catalog-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .catalog-header h2 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .catalog-header p {
+      color: var(--muted-text);
+      font-size: 0.95rem;
+    }
+    .filter-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-tab {
+      background: var(--light-bg);
+      border: 1px solid var(--border-color);
+      padding: 8px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--dark-text);
+      transition: all 0.2s;
+    }
+    .filter-tab.active, .filter-tab:hover {
+      background: var(--dark-text);
+      color: white;
+      border-color: var(--dark-text);
+    }
+
+    /* Product Grid */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 24px;
+    }
+    .product-card {
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      overflow: hidden;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--card-shadow);
+      border-color: #D0D0D0;
+    }
+    .product-img-wrap {
+      width: 100%;
+      height: 220px;
+      background: #F1F1F1;
+      position: relative;
+      overflow: hidden;
+    }
+    .product-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s;
+    }
+    .product-card:hover .product-img-wrap img {
+      transform: scale(1.05);
+    }
+    .badge-tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-recommerce {
+      background: #E8F5E9;
+      color: #2E7D32;
+      border: 1px solid #A5D6A7;
+    }
+    .badge-authenticity {
+      background: #E3F2FD;
+      color: var(--ebay-blue);
+      border: 1px solid #90CAF9;
+    }
+    .badge-auction {
+      background: #FFF3E0;
+      color: #E65100;
+      border: 1px solid #FFCC80;
+    }
+
+    .product-info {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+    .product-category {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--muted-text);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+    .product-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 8px;
+      color: var(--dark-text);
+    }
+    .product-condition {
+      font-size: 0.82rem;
+      color: #4CAF50;
+      font-weight: 600;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .product-price-row {
+      margin-top: auto;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .price-val {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark-text);
+    }
+    .bids-count {
+      font-size: 0.78rem;
+      color: var(--muted-text);
+    }
+    .add-to-cart-btn {
+      width: 100%;
+      background: #FFFFFF;
+      border: 2px solid var(--ebay-blue);
+      color: var(--ebay-blue);
+      font-weight: 700;
+      padding: 10px;
+      border-radius: 24px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .add-to-cart-btn:hover {
+      background: var(--ebay-blue);
+      color: white;
+    }
+
+    /* Cart Slide-Over Drawer */
+    .cart-drawer-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+    }
+    .cart-drawer-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 420px;
+      max-width: 90vw;
+      height: 100%;
+      background: white;
+      z-index: 1000;
+      box-shadow: -4px 0 20px rgba(0,0,0,0.15);
+      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .cart-drawer.active {
+      right: 0;
+    }
+    .cart-header {
+      padding: 20px;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cart-header h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+    }
+    .close-cart-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--muted-text);
+    }
+    .cart-items-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .cart-empty-message {
+      text-align: center;
+      color: var(--muted-text);
+      margin-top: 60px;
+      font-size: 0.95rem;
+    }
+    .cart-item {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 14px;
+    }
+    .cart-item-img {
+      width: 65px;
+      height: 65px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #F1F1F1;
+    }
+    .cart-item-details {
+      flex: 1;
+    }
+    .cart-item-title {
+      font-size: 0.88rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 4px;
+    }
+    .cart-item-price {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--dark-text);
+    }
+    .cart-remove-btn {
+      background: none;
+      border: none;
+      color: var(--ebay-red);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+    .cart-footer {
+      padding: 20px;
+      border-top: 1px solid var(--border-color);
+      background: #FAFAFA;
+    }
+    .cart-total-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+    .checkout-btn {
+      width: 100%;
+      background: var(--ebay-blue);
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 28px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .checkout-btn:hover {
+      background: #004eb3;
+    }
+
+    /* Footer */
+    footer {
+      background: #F7F7F7;
+      border-top: 1px solid var(--border-color);
+      padding: 40px 5% 20px;
+      margin-top: 60px;
+      font-size: 0.85rem;
+      color: var(--muted-text);
+    }
+    .footer-cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+    .footer-col h5 {
+      color: var(--dark-text);
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .footer-col a {
+      color: var(--muted-text);
+      text-decoration: none;
+    }
+    .footer-col a:hover {
+      color: var(--ebay-blue);
+      text-decoration: underline;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border-color);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Utilities -->
+  <div class="top-bar">
+    <div>
+      ¡Hola! <a href="#">Identifícate</a> o <a href="#">Regístrate</a> | <span style="color:#2E7D32; font-weight:600;">✓ Compras respaldadas por eBay Money Back Guarantee</span>
+    </div>
+    <div class="top-bar-links">
+      <span><a href="#" style="color:var(--muted-text);">Vender</a></span>
+      <span><a href="#" style="color:var(--muted-text);">Ayuda y Contacto</a></span>
+      <span><a href="#" style="color:var(--muted-text);">Notificaciones</a></span>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <a href="#" class="logo-container" aria-label="eBay Home">
+      <!-- Official 4-color eBay Vector Logo -->
+      <svg class="logo-svg" viewBox="0 0 165 65" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M37.9 33.6C37.9 44.5 30.6 51.5 20.2 51.5C9.7 51.5 2.5 44.4 2.5 33.6C2.5 22.8 9.8 15.7 20.2 15.7C30.6 15.7 37.9 22.7 37.9 33.6ZM13.8 33.6C13.8 39.8 16.7 44.4 20.2 44.4C23.7 44.4 26.6 39.8 26.6 33.6C26.6 27.5 23.7 22.9 20.2 22.9C16.7 22.9 13.8 27.5 13.8 33.6Z" fill="#E53238"/>
+        <path d="M38.8 3.5H49.8V21.1C52.4 17.5 56.6 15.6 62.1 15.6C71.7 15.6 79.5 22.9 79.5 33.6C79.5 44.3 71.7 51.5 62.1 51.5C56.6 51.5 52.4 49.6 49.8 46V50.5H38.8V3.5ZM68.3 33.6C68.3 27.4 65.4 22.9 61.9 22.9C58.4 22.9 55.5 27.4 55.5 33.6C55.5 39.8 58.4 44.4 61.9 44.4C65.4 44.4 68.3 39.8 68.3 33.6Z" fill="#0064D2"/>
+        <path d="M109.9 50.5H99.1V46C96.5 49.6 92.3 51.5 86.8 51.5C77.4 51.5 70.4 44.7 70.4 34.2C70.4 23.7 77.4 16.9 86.8 16.9C92.3 16.9 96.5 18.8 99.1 22.4V17.9H109.9V50.5ZM99.1 34.2C99.1 28 96.2 23.5 92.7 23.5C89.2 23.5 86.3 28 86.3 34.2C86.3 40.4 89.2 44.9 92.7 44.9C96.2 44.9 99.1 40.4 99.1 34.2Z" fill="#F5AF02"/>
+        <path d="M117.8 17.9L129.5 44.2L141.2 17.9H153.2L135.5 54.8L130.3 65.5H119.5L124.7 54.8L106.1 17.9H117.8Z" fill="#86B817"/>
+      </svg>
+    </a>
+
+    <!-- Search Form -->
+    <div class="search-wrapper">
+      <input type="text" id="searchInput" placeholder="Busca cualquier artículo, marca, coleccionable o refacción...">
+      <select id="categorySelect">
+        <option value="all">Todas las categorías</option>
+        <option value="coleccionables">Coleccionables</option>
+        <option value="motors">eBay Motors</option>
+        <option value="recommerce">Reacondicionados (Re-commerce)</option>
+        <option value="sneakers">Sneakers & Moda</option>
+      </select>
+      <button onclick="filterProducts()">Buscar</button>
+    </div>
+
+    <!-- Actions -->
+    <div class="header-actions">
+      <button class="cart-btn-nav" onclick="toggleCart()">
+        🛒 Carrito
+        <span class="cart-badge" id="cartCountBadge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Sub Navigation -->
+  <nav class="sub-nav">
+    <a href="javascript:void(0)" class="active" onclick="filterCategory('all', this)">🔥 Destacados</a>
+    <a href="javascript:void(0)" onclick="filterCategory('coleccionables', this)">💎 Coleccionables & Arte</a>
+    <a href="javascript:void(0)" onclick="filterCategory('motors', this)">🚗 eBay Motors & Refacciones</a>
+    <a href="javascript:void(0)" onclick="filterCategory('recommerce', this)">♻️ eBay Refurbished</a>
+    <a href="javascript:void(0)" onclick="filterCategory('sneakers', this)">👟 Zapatillas Auténticas</a>
+    <a href="javascript:void(0)" onclick="filterCategory('relojes', this)">⌚ Alta Relojería</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-tagline">🌱 Liderando el Re-commerce y la Economía Circular</div>
+      <h1>El marketplace global para lo que <span class="brand-e">a</span><span class="brand-b">m</span><span class="brand-a">a</span><span class="brand-y">s</span>.</h1>
+      <p>Encuentra piezas únicas, antigüedades, tecnología reacondicionada y refacciones automotrices con peritaje físico de <strong>Authenticity Guarantee</strong> y protección 100% al comprador.</p>
+      <div class="hero-buttons">
+        <button class="btn-primary" onclick="document.getElementById('catalog').scrollIntoView({behavior: 'smooth'})">Explorar Colección</button>
+        <button class="btn-secondary" onclick="alert('eBay conecta a más de 130 millones de compradores activos con vendedores particulares y PyMEs de todo el mundo sin intermediarios forzados.')">Conocer Nuestro Modelo</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Strip -->
+  <section class="trust-strip">
+    <div class="trust-card">
+      <div class="trust-icon">🛡️</div>
+      <div class="trust-text">
+        <h4>eBay Money Back Guarantee</h4>
+        <p>Reembolso íntegro si el artículo no llega o no coincide con la descripción.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">🔍</div>
+      <div class="trust-text">
+        <h4>Authenticity Guarantee</h4>
+        <p>Inspección física por peritos independientes antes del envío final.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">♻️</div>
+      <div class="trust-text">
+        <h4>Economía Circular</h4>
+        <p>Extiende la vida útil de los productos y compra tecnología sustentable.</p>
+      </div>
+    </div>
+    <div class="trust-card">
+      <div class="trust-icon">📦</div>
+      <div class="trust-text">
+        <h4>eBay Verified Dispatch</h4>
+        <p>Trazabilidad y cálculo de riesgo para envíos entre particulares.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <main class="catalog-section" id="catalog">
+    <div class="catalog-header">
+      <div>
+        <h2>Catálogo de Artículos Auténticos & Únicos</h2>
+        <p>Inventario verificado por peritaje independiente y comunidad global</p>
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="filterCategory('all', this)">Todos</button>
+        <button class="filter-tab" onclick="filterCategory('coleccionables', this)">Coleccionables</button>
+        <button class="filter-tab" onclick="filterCategory('motors', this)">Motors</button>
+        <button class="filter-tab" onclick="filterCategory('recommerce', this)">Re-commerce</button>
+        <button class="filter-tab" onclick="filterCategory('sneakers', this)">Sneakers</button>
+        <button class="filter-tab" onclick="filterCategory('relojes', this)">Relojería</button>
+      </div>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="products-grid" id="productsGrid">
+      <!-- Populated via JS -->
+    </div>
+  </main>
+
+  <!-- Cart Slide-Over Drawer -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Tu Carrito eBay</h3>
+      <button class="close-cart-btn" onclick="toggleCart()">&times;</button>
+    </div>
+    <div class="cart-items-list" id="cartItemsList">
+      <div class="cart-empty-message">Tu carrito está vacío.<br>Explora nuestro catálogo y descubre piezas únicas.</div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Total Estimado:</span>
+        <span id="cartTotalVal">$0.00 MXN</span>
+      </div>
+      <button class="checkout-btn" onclick="checkout()">Proceder al Pago Seguro</button>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <h5>Comprar</h5>
+        <ul>
+          <li><a href="#">Cómo ofertar en subastas</a></li>
+          <li><a href="#">eBay Money Back Guarantee</a></li>
+          <li><a href="#">Authenticity Guarantee</a></li>
+          <li><a href="#">eBay Refurbished</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Vender</h5>
+        <ul>
+          <li><a href="#">Comenzar a vender</a></li>
+          <li><a href="#">Centro para PyMEs</a></li>
+          <li><a href="#">Tarifas de publicación</a></li>
+          <li><a href="#">Promoted Listings</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Economía & Sustentabilidad</h5>
+        <ul>
+          <li><a href="#">Reporte Re-commerce 2026</a></li>
+          <li><a href="#">Impacto ambiental</a></li>
+          <li><a href="#">Neutralidad de carbono</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Sobre eBay Inc.</h5>
+        <ul>
+          <li><a href="#">Nuestra Historia (Fundada 1995)</a></li>
+          <li><a href="#">Relación con Inversionistas</a></li>
+          <li><a href="#">Brand Book & Guía de Identidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 1995-2026 eBay Inc. Todos los derechos reservados. Univers Extended & Market Sans Design Systems.</div>
+      <div>Desarrollado para Práctica 7: Análisis de Branding — Licenciatura en Actuaría</div>
+    </div>
+  </footer>
+
+  <!-- JavaScript logic -->
+  <script>
+    // Real catalog items aligned with Brand Book & Practica 7
+    const products = [
+      {
+        id: 1,
+        title: "Reloj Omega Speedmaster Professional Moonwatch Vintage",
+        category: "relojes",
+        price: 94500,
+        condition: "✓ Peritaje Físico Aprobado",
+        tag: "Authenticity Guarantee",
+        tagClass: "badge-authenticity",
+        image: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=600&q=80",
+        format: "Subasta activa (14 pujas)"
+      },
+      {
+        id: 2,
+        title: "Nike Air Jordan 1 Retro High OG 'Chicago' 1985 Edition",
+        category: "sneakers",
+        price: 28900,
+        condition: "✓ Autenticidad Verificada",
+        tag: "Authenticity Guarantee",
+        tagClass: "badge-authenticity",
+        image: "https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=600&q=80",
+        format: "Cómpralo Ya!"
+      },
+      {
+        id: 3,
+        title: "Carburador Holley 4-Barras Clásico para Ford Mustang 1967",
+        category: "motors",
+        price: 8400,
+        condition: "✓ Refacción Original Descatalogada",
+        tag: "eBay Motors",
+        tagClass: "badge-recommerce",
+        image: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=600&q=80",
+        format: "Cómpralo Ya! / Oferta"
+      },
+      {
+        id: 4,
+        title: "Apple MacBook Pro 14 M2 Pro (eBay Refurbished - Grado A)",
+        category: "recommerce",
+        price: 24500,
+        condition: "✓ Garantía 2 Años Re-commerce",
+        tag: "Re-commerce Certificado",
+        tagClass: "badge-recommerce",
+        image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=600&q=80",
+        format: "Envío Gratis Garantizado"
+      },
+      {
+        id: 5,
+        title: "Cámara Réflex Analógica Canon AE-1 con Lente 50mm f/1.8",
+        category: "coleccionables",
+        price: 4950,
+        condition: "✓ Excelente Estado Cosmético",
+        tag: "Vintage / Colección",
+        tagClass: "badge-auction",
+        image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=600&q=80",
+        format: "Subasta activa (8 pujas)"
+      },
+      {
+        id: 6,
+        title: "Tarjeta Pokémon Charizard Base Set 1st Edition Holográfica PSA 9",
+        category: "coleccionables",
+        price: 68000,
+        condition: "✓ Certificación Oficial PSA Graduado",
+        tag: "Authenticity Guarantee",
+        tagClass: "badge-authenticity",
+        image: "https://images.unsplash.com/photo-1613771404784-3a5686aa2be3?auto=format&fit=crop&w=600&q=80",
+        format: "Subasta activa (31 pujas)"
+      },
+      {
+        id: 7,
+        title: "Volante Deportivo Momo Prototipo Cuero Genuino Clásico",
+        category: "motors",
+        price: 5200,
+        condition: "✓ Pieza Genuina para Restauración",
+        tag: "eBay Motors",
+        tagClass: "badge-recommerce",
+        image: "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?auto=format&fit=crop&w=600&q=80",
+        format: "Cómpralo Ya!"
+      },
+      {
+        id: 8,
+        title: "Sony PlayStation 5 Digital Edition (eBay Refurbished)",
+        category: "recommerce",
+        price: 8200,
+        condition: "✓ Inspeccionado y Empaque Sustentable",
+        tag: "Re-commerce Certificado",
+        tagClass: "badge-recommerce",
+        image: "https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=600&q=80",
+        format: "Cómpralo Ya!"
+      }
+    ];
+
+    let cart = [];
+
+    // Render products
+    function renderProducts(items) {
+      const grid = document.getElementById('productsGrid');
+      grid.innerHTML = '';
+      if(items.length === 0) {
+        grid.innerHTML = '<div style="grid-column: 1/-1; text-align:center; padding: 40px; color: var(--muted-text);">No se encontraron artículos con ese criterio de búsqueda.</div>';
+        return;
+      }
+      items.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <div class="product-img-wrap">
+            <span class="badge-tag ${p.tagClass}">${p.tag}</span>
+            <img src="${p.image}" alt="${p.title}" loading="lazy">
+          </div>
+          <div class="product-info">
+            <span class="product-category">${p.category}</span>
+            <h3 class="product-title">${p.title}</h3>
+            <div class="product-condition">${p.condition}</div>
+            <div class="product-price-row">
+              <span class="price-val">$${p.price.toLocaleString('es-MX')} MXN</span>
+              <span class="bids-count">${p.format}</span>
+            </div>
+            <button class="add-to-cart-btn" onclick="addToCart(${p.id})">
+              <span>+</span> Agregar al Carrito
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    // Filter by Category
+    function filterCategory(category, el) {
+      if(el) {
+        document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.sub-nav a').forEach(a => a.classList.remove('active'));
+        el.classList.add('active');
+      }
+      if(category === 'all') {
+        renderProducts(products);
+      } else {
+        const filtered = products.filter(p => p.category === category);
+        renderProducts(filtered);
+      }
+    }
+
+    // Filter by search bar
+    function filterProducts() {
+      const query = document.getElementById('searchInput').value.toLowerCase().trim();
+      const cat = document.getElementById('categorySelect').value;
+      const filtered = products.filter(p => {
+        const matchesQuery = p.title.toLowerCase().includes(query) || p.category.toLowerCase().includes(query);
+        const matchesCat = (cat === 'all') ? true : p.category === cat;
+        return matchesQuery && matchesCat;
+      });
+      renderProducts(filtered);
+    }
+
+    // Cart Drawer Toggle
+    function toggleCart() {
+      document.getElementById('cartDrawer').classList.toggle('active');
+      document.getElementById('cartOverlay').classList.toggle('active');
+    }
+
+    // Add Item to Cart
+    function addToCart(id) {
+      const item = products.find(p => p.id === id);
+      if(item) {
+        cart.push(item);
+        updateCartUI();
+        // Open drawer automatically on add
+        document.getElementById('cartDrawer').classList.add('active');
+        document.getElementById('cartOverlay').classList.add('active');
+      }
+    }
+
+    // Remove Item from Cart
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCartUI();
+    }
+
+    // Update Cart UI
+    function updateCartUI() {
+      const badge = document.getElementById('cartCountBadge');
+      badge.textContent = cart.length;
+
+      const list = document.getElementById('cartItemsList');
+      const totalEl = document.getElementById('cartTotalVal');
+
+      if(cart.length === 0) {
+        list.innerHTML = '<div class="cart-empty-message">Tu carrito está vacío.<br>Explora nuestro catálogo y descubre piezas únicas.</div>';
+        totalEl.textContent = '$0.00 MXN';
+        return;
+      }
+
+      list.innerHTML = '';
+      let total = 0;
+      cart.forEach((item, idx) => {
+        total += item.price;
+        const itemDiv = document.createElement('div');
+        itemDiv.className = 'cart-item';
+        itemDiv.innerHTML = `
+          <img src="${item.image}" class="cart-item-img" alt="${item.title}">
+          <div class="cart-item-details">
+            <div class="cart-item-title">${item.title}</div>
+            <div class="cart-item-price">$${item.price.toLocaleString('es-MX')} MXN</div>
+            <button class="cart-remove-btn" onclick="removeFromCart(${idx})">Eliminar</button>
+          </div>
+        `;
+        list.appendChild(itemDiv);
+      });
+
+      totalEl.textContent = `$${total.toLocaleString('es-MX')} MXN`;
+    }
+
+    // Checkout simulate
+    function checkout() {
+      if(cart.length === 0) {
+        alert('Tu carrito está vacío.');
+        return;
+      }
+      alert('¡Gracias por tu compra en eBay!\nTus artículos pasan a proceso de inspección pericial bajo la garantía de Authenticity Guarantee y eBay Money Back Guarantee.');
+      cart = [];
+      updateCartUI();
+      toggleCart();
+    }
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts(products);
+    });
+  </script>
+</body>
+</html>
